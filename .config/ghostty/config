@@ -1,0 +1,13 @@
+# ghostty +show-config --default --docs
+
+theme = Zenwritten Dark
+
+shell-integration-features = no-cursor
+cursor-style = underline
+cursor-style-blink = false
+adjust-cursor-thickness = 3
+
+background-opacity = 0.95
+background-blur = 20
+
+window-inherit-working-directory = false

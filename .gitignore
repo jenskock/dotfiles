@@ -1,0 +1,11 @@
+*
+
+!.gitignore
+
+# Z Shell
+!.zshrc
+
+# Ghostty
+!.config/
+!.config/ghostty/
+!.config/ghostty/config

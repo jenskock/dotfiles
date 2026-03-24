@@ -9,3 +9,7 @@
 !.config/
 !.config/ghostty/
 !.config/ghostty/config
+
+# SSH
+!.config/ssh/
+!.config/ssh/config

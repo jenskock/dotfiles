@@ -7,7 +7,8 @@ cursor-style = underline
 cursor-style-blink = false
 adjust-cursor-thickness = 3
 
-background-opacity = 0.95
+background-opacity = 0.9
 background-blur = 20
+background-opacity-cells = true
 
 window-inherit-working-directory = false

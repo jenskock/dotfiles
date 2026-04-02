@@ -24,3 +24,6 @@ fi
 
 # Clean up merged git branches (CIA one-liner)
 alias gitclean='git branch --merged origin/main | grep -vE "^\s*(\*|main|develop)" | xargs -n 1 git branch -d'
+
+# Set terminal to 256 colors
+export TERM=xterm-256color

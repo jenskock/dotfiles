@@ -13,3 +13,4 @@
 # SSH
 !.config/ssh/
 !.config/ssh/config
+!.config/ssh/config.local.example

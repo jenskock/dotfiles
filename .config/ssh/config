@@ -1,2 +1,4 @@
+Include ~/.config/ssh/config.local
+
 Host *
   SetEnv TERM=xterm-256color

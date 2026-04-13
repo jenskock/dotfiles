@@ -22,8 +22,17 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Clean up merged git branches (CIA one-liner)
-alias gitclean='git branch --merged origin/main | grep -vE "^\s*(\*|main|develop)" | xargs -n 1 git branch -d'
+# Clean up stale local branches whose upstream was deleted
+gitclean() {
+  git fetch --prune || return 1
+
+  git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads \
+    | awk '$2 == "[gone]" { print $1 }' \
+    | grep -vE '^(main|develop)$' \
+    | while IFS= read -r branch; do
+        [ -n "$branch" ] && git branch -D "$branch"
+      done
+}
 
 # Set terminal to 256 colors
 export TERM=xterm-256color

@@ -34,5 +34,24 @@ gitclean() {
       done
 }
 
+# Docker disk cleanup (truncate logs + system prune)
+docker-cleanup() {
+  sudo bash -euo pipefail <<'EOF'
+echo "=== Docker disk before ==="
+df -h /var/lib/docker 2>/dev/null || df -h /
+echo
+echo "=== Truncating container logs ==="
+find /var/lib/docker/containers -name "*-json.log" -print -exec truncate -s 0 {} \;
+echo
+echo "=== Docker system prune ==="
+docker system prune -af
+echo
+echo "=== Docker disk after ==="
+df -h /var/lib/docker 2>/dev/null || df -h /
+echo
+echo "Done."
+EOF
+}
+
 # Set terminal to 256 colors
 export TERM=xterm-256color

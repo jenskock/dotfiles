@@ -1,5 +1,5 @@
 # Oh-My-Posh
-eval "$(oh-my-posh init zsh --config 'https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/huvix.omp.json')"
+eval "$(oh-my-posh init zsh --config 'https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/onehalf.minimal.omp.json')"
 
 # Ranger and rcd alias
 ranger_cd() {
